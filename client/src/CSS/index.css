@@ -1,0 +1,2378 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+    
+}
+.main-container{
+    height:100vh;
+    width:100%;
+   background: linear-gradient(to right, #ED2939, #ff4d5d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+}
+.container{
+
+    background-color: white;
+    height: 20rem;
+    width:18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.container .text-field{
+    width:16rem;
+    
+    text-align: center;
+   margin-left: 1rem;
+}
+.not-account-reg{
+    font-family: sans-serif;
+    text-align: center;
+    margin:0.5rem;
+}
+.container h2{
+    text-align: center;
+    font-family: sans-serif;
+    margin:0.5rem;
+   margin-bottom: 1rem;
+    color:rgb(125, 43, 226);
+}
+.container-signup{
+
+    background-color: white;
+    height: 24rem;
+    width:18rem;
+    text-align: center;
+}
+.container-signup h2{
+    text-align: center;
+    font-family: sans-serif;
+    margin:0.5rem;
+   margin-bottom: 1rem;
+    color:rgb(125, 43, 226);
+}
+.input-field{
+   
+}
+.text-field input{
+    padding:0.5rem;
+    margin:0.2rem;
+    font-size:1rem;
+    width:84%;
+     background-color: rgb(230, 230, 230);
+     border:none;
+     border-radius: 0.2rem;
+     
+}
+.text-field input::placeholder{
+    color:rgb(118, 118, 118);
+}
+
+.text-field select{
+    padding:0.5rem;
+    margin:0.2rem;
+    font-size:1rem;
+    width:90%;
+     background-color: rgb(230, 230, 230);
+     border:none;
+     border-radius: 0.2rem;
+     
+}
+
+.text-field select::placeholder{
+    color:rgb(118, 118, 118);
+}
+.roll{
+    margin-bottom: 0.2rem;
+}
+.text-field label{
+    margin:0.15rem;
+  
+    font-family: sans-serif;
+    float:left;
+     color:rgb(60, 60, 60);
+}
+.stu-log-btn button{
+    margin-top: -2rem;
+     background-color: rgb(82, 16, 235);
+    border:none;
+    color:white;
+    border-radius: 0.4rem;
+    width:89%;
+    padding:0.6rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight:500;
+}
+.signup-link p{
+    text-align: center;
+    font-family: sans-serif;
+    margin:1rem;
+    margin-top:1rem;
+}
+
+
+
+/* font page section is starting from here */
+.font-container{
+    height: 100vh;
+    width: 100vw;
+  background-color: white;
+}
+.font-main{
+    display: flex;
+    align-items: center;
+   height: 100vh;
+    width: 100vw;
+   
+}
+.font-image{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.font-image img{
+    height:500px;
+    width:auto;
+    overflow-y: hidden;
+}
+.font-text{
+    width: 60%;
+ background: linear-gradient(to right, #ED2939, #ff4d5d);
+
+     height: 100vh;
+     border-top-left-radius: 60% 90%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+.font-text p{
+    
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    color:white;
+}
+.font-p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #82002b 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 4rem;
+  font-family: sans-serif;
+  
+  margin:2rem;
+}
+.font-text button{
+    width:50%;
+    padding:0.5rem;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    border:none;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.join-with-us{
+    height: 100vh;
+    width:100vw;
+     background: rgba(0, 0, 0, 0.5);
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.join-us{
+    background-color: white;
+    height:15rem;
+    width:25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.join-us select{
+    font-size: 1.1rem;
+    padding:0.3rem;
+    width:60%;
+     margin:0.7rem;
+}
+.join-us-cross{
+    padding:0.7rem;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:-4rem;
+    right:-4rem;
+    font-size: 1.3rem;
+}
+.font-text img{
+    height:140px;
+    width: 150px;
+}
+.join-us button{
+    background-color: #ED2939;
+    color:white;
+    padding:0.5rem;
+    width: 60%;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+   
+}
+.web-logo{
+    position: absolute;
+    top:1rem;
+    left:2rem;
+  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.web-logo img{
+    width:50px;
+    height: 45px;
+}
+.web-logo-name{
+    color:#45008e;
+    font-size: 0.9rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+/* font page section is ending here */
+
+
+/* Teacher dashboard is starting from here */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* LAYOUT */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR - FIXED */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.panel {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.menu li:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.menu li.active {
+  background-color: #e0ecff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* MAIN CONTENT - Adjusted for fixed sidebar */
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+  width: calc(100% - 260px);
+}
+
+/* Welcome Card */
+.welcome-card {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+}
+
+.welcome-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.welcome-card p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Teacher dashboard is ending here */
+
+/* Teacher dashboard : Create form section start here */
+
+.create-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CreateForm Container */
+.create-form-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-header p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+/* Feedback Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Questions Section */
+.feedback-form h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Question Box */
+.question-box {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question-box input[type="text"],
+.question-box select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.question-box input[type="text"]:focus,
+.question-box select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.question-box select {
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Options Section */
+.options {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.options h4 {
+  font-size: 0.95rem;
+  color: #34495e;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.options input[type="text"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.options input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"],
+.feedback-form > button:last-of-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+button[type="submit"]:hover,
+.feedback-form > button:last-of-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button[type="button"] {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+button[type="button"]:hover {
+  background: #d5dbdb;
+  transform: translateY(-1px);
+}
+
+.options button {
+  background: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.options button:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* Preview Section */
+.preview-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.preview-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.preview-section h3 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.preview-section > p {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Preview Question */
+.preview-question {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #27ae60;
+}
+
+.preview-question p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.preview-question p b {
+  color: #27ae60;
+}
+
+.preview-question input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.preview-question input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.preview-question > div {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.preview-question > div:hover {
+  background: #f8f9fa;
+}
+
+.preview-question select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-box {
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-question {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Teacher dashboard : Create form section end here */
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 30px;
+  }
+
+  .create-form-container {
+    padding: 1.5rem;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+
+  .stat-card {
+    min-width: 180px;
+  }
+}
+
+/* Mobile View (Below 768px) */
+@media (max-width: 768px) {
+  /* Sidebar becomes top bar on mobile */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+    overflow-y: visible;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .menu li {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Main content adjusts for top bar */
+  .main-content {
+    margin-left: 0;
+    margin-top: 70px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Welcome Card */
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .welcome-card h2 {
+    font-size: 20px;
+  }
+
+  .welcome-card p {
+    font-size: 14px;
+  }
+
+  /* Stats */
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-card {
+    min-width: 100%;
+    padding: 20px;
+  }
+
+  /* Create Form Container */
+  .create-form-container {
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+  }
+
+  /* Question Box */
+  .question-box {
+    padding: 1rem;
+  }
+
+  /* Buttons */
+  button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Preview Section */
+  .preview-section {
+    padding: 1.5rem;
+  }
+
+  .preview-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .preview-question {
+    padding: 1rem;
+  }
+}
+
+/* Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .menu li {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .main-content {
+    padding: 15px;
+    margin-top: 65px;
+  }
+
+  .create-form-container {
+    padding: 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .question-box {
+    padding: 0.75rem;
+  }
+
+  button {
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .welcome-card {
+    padding: 15px;
+  }
+
+  .welcome-card h2 {
+    font-size: 18px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-content {
+    margin-top: 60px;
+  }
+
+  .sidebar {
+    padding: 10px 15px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+/* Teacher profile section start here  */
+
+.profile-container {
+  background: #f8faff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #4f46e5;
+}
+
+.profile-info {
+  flex: 1;
+  margin-left: 1.5rem;
+}
+
+.profile-info h2 {
+  margin: 0;
+  color: #111827;
+}
+
+.profile-info p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.edit-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #3730a3;
+}
+
+.profile-details {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.profile-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #374151;
+}
+
+.profile-field input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.profile-field input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  margin-top: 1.5rem;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #15803d;
+}
+
+
+/* For Profile Picture  */
+
+.profile-avatar-section {
+  text-align: center;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #4f46e5;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.change-photo-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.4rem;
+}
+
+
+
+/* teacher profile section end here */
+
+
+
+
+
+
+
+
+
+/* student registration section is starting from here */
+.student-reg-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1rem; 
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.student-reg-container h2 {
+  grid-column: span 2; 
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+
+.student-reg-container form {
+  display: contents; 
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.stu-log-btn {
+  grid-column: span 2; 
+  text-align: center;
+}
+.not-account-log{
+   font-family: sans-serif;
+   
+    transform: translateX(50%);
+}
+/* student registration secton is ending here  */
+
+
+
+/* admin dashboard design is starting from here */
+.admin-dashboard{
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+}
+.left-admin-container{
+    background-color: #03011f;
+    width: 27%;
+    height: 100%;
+   position: fixed;
+}
+.admin-profile{
+    background-color:rgb(0, 0, 71);
+   
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding:1rem;
+}
+.admin-profile img{
+    height:58px;
+    width:58px;
+    border-radius: 50%;
+}
+.admin-profile-text p{
+    font-size: 1rem;
+    font-family: sans-serif;
+    color:white;
+    margin:0.5rem;
+    margin-left: 1rem;
+}
+.admin-left-main{
+    height:calc(100dvh - 10rem);
+    width: 100%;
+   
+}
+.admin-left-main li{
+    height: 4rem;
+    color:white;
+    display: flex;
+    align-items: center;
+   /* background-color:#231557; */
+    margin:0.5rem;
+    font-family: sans-serif;
+    padding:0.3rem;
+    padding-left: 1.5rem;
+    position: relative;
+    border-radius: 0.5rem;
+}
+.admin-left-main li:hover{
+    background-color: #050231;
+}
+.active-li-menu{
+    background-color: #050231;
+}
+.admin-left-arrow{
+    position: absolute;
+    right:2rem;
+}
+.admin-logout{
+    background-color: #050231;
+    height:3.5rem;
+    color:white;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    font-family: sans-serif;
+    gap:1rem;
+    
+
+
+}
+
+
+.right-admin-container{
+   
+    width: 73%;
+    height: 100dvh;
+    margin-left: 27%;
+}
+.teacher-table-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-table-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teacher-table th,
+.teacher-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-family: sans-serif;
+}
+
+.teacher-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.teacher-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.teacher-table tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.2s ease-in-out;
+}
+
+.approve-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.approve-btn:hover {
+  background-color: #218838;
+}
+
+.reject-btn {
+  background-color:red;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+ 
+}
+.td-btn{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+.td-btn1{
+    display: flex;
+   
+    gap:0.4rem;
+}
+.reject-btn:hover {
+  background-color:rgb(188, 0, 0);
+}
+
+.admin-logout-container{
+    height:100dvh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-logout-container-popup{
+    height:20rem;
+    width: 30rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.admin-logout-container-popup p{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+.admin-logout-container-popup-btn{
+   
+    display: flex;
+    gap:1rem;
+}
+.admin-logout-container-popup-btn button{
+    padding:0.7rem;
+    border:none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0.3rem;
+}
+.admin-logout-container-popup-btn button:nth-child(2){
+    background-color: green;
+    color:white;
+}
+.admin-logout-container-popup-btn button:nth-child(1){
+    background-color: rgb(220, 220, 220);
+    
+}
+/* admin dashboard design is ending here */
+
+
+/* teacher dashboard is starting from here */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fbff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100dvh;
+  background: #fff;
+  padding: 1.5rem;
+  border-right: 1px solid #e4e4e4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.panel {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu li:hover,
+.menu li.active {
+  background: #e6f0ff;
+  color: #007bff;
+}
+
+/* Main Section */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.welcome-card {
+  background: linear-gradient(90deg, #407bff, #5a9bff);
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.welcome-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* teacher dashboard is ending here */
+
+
+
+
+/* teacher view from is starting from here */
+/* View Forms Container */
+.view-container {
+  padding: 2rem;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.form-list {
+ 
+  display: grid;
+  gap: 1rem;
+}
+.question-section ul{
+ 
+  margin-left: 1.3rem;
+}
+.form-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-card button {
+  margin-top: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+
+}
+
+.copy-msg {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* teacher view from is ending here */
+
+
+
+/* teacher edit form is starting from here */
+.edit-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #2b4b6f;
+  margin-bottom: 25px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0056d2;
+  box-shadow: 0 0 5px rgba(0, 85, 210, 0.3);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.question-box {
+  background: #f8faff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #e0e6ef;
+  margin-bottom: 10px;
+}
+
+.question-box input,
+.question-box select {
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.options {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-option-btn {
+  background: #e8f0fe;
+  color: #0056d2;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.add-option-btn:hover {
+  background: #0056d2;
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-question-btn,
+.save-btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-question-btn {
+  background-color: #f4f6fb;
+  color: #0056d2;
+}
+
+.save-btn {
+  background-color: #0056d2;
+  color: white;
+}
+
+.add-question-btn:hover {
+  background-color: #dfe7fa;
+}
+
+.save-btn:hover {
+  background-color: #003d99;
+}
+
+.success-message {
+  text-align: center;
+  color: green;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.loading-text {
+  text-align: center;
+  color: gray;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+/* teacher edit form is ending here */
+
+
+
+
+
+
+/* student available form is starting from here */
+/* Available Forms Container */
+.available-forms {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+/* Page Title */
+.available-forms h2 {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Loading and No Forms Message */
+.available-forms > p {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+  padding: 30px 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Cards */
+.form-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Form Title (h3) */
+.form-card h3 {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  color: white;
+  padding: 8px 14px;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: -20px -20px 15px -20px;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+/* Form Details */
+.form-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.form-card p b {
+  font-weight: 700;
+  color: #333;
+  margin-right: 4px;
+}
+
+/* Fill Form Button */
+.form-card button {
+  background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  box-shadow: 0 3px 5px rgba(233, 30, 99, 0.3);
+  transition: all 0.3s ease;
+}
+
+.form-card button:hover {
+  background: linear-gradient(135deg, #D81B60 0%, #AD1457 100%);
+  box-shadow: 0 4px 8px rgba(233, 30, 99, 0.4);
+  transform: translateY(-2px);
+}
+
+.form-card button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(233, 30, 99, 0.3);
+}
+
+.form-card button:focus {
+  outline: 2px solid #E91E63;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .available-forms {
+    padding: 12px;
+  }
+
+  .available-forms h2 {
+    font-size: 19px;
+    padding: 10px 14px;
+  }
+  
+  .form-card {
+    padding: 16px;
+  }
+  
+  .form-card h3 {
+    font-size: 15px;
+    margin: -16px -16px 12px -16px;
+    padding: 7px 12px;
+  }
+
+  .form-card p {
+    font-size: 13px;
+  }
+  
+  .form-card button {
+    padding: 9px 18px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* student available form is ending here */
+
+
+/* fillfeedback from is starting from header */
+.fill-feedback-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.fill-feedback-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.question-block {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f9fafc;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.question-block:hover {
+  background: #eef3ff;
+}
+
+.question-text {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.dropdown,
+.text-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.dropdown:focus,
+.text-input:focus {
+  border-color: #0056d2;
+  box-shadow: 0 0 5px rgba(0, 86, 210, 0.3);
+}
+
+/* ✅ MCQ Options */
+.mcq-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mcq-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5fb;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+}
+
+.mcq-option:hover {
+  background: #e3ebff;
+}
+
+.mcq-option.selected {
+  background: #d6e3ff;
+  border-color: #0056d2;
+}
+
+.mcq-option input[type="radio"] {
+  accent-color: #0056d2;
+  transform: scale(1.1);
+}
+
+/* Submit button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  background: #0056d2;
+  color: white;
+  font-weight: 600;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background: #003d99;
+}
+.success-card {
+  background-color: #e8ffe8;
+  border: 2px solid #4caf50;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-card h2 {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* fillfeedback form is ending here */
+
+
+
+
+/* view responses css part is starting from here */
+.response-table-container {
+  margin: 30px auto;
+  max-width: 96%;
+  background: #ffffff;
+  padding: 43px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.response-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.response-table th,
+.response-table td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  vertical-align: middle;
+}
+
+.response-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.response-table td.answer-cell {
+  font-weight: 500;
+  color: #333;
+}
+
+.response-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.response-table tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .response-table th,
+  .response-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.export-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.export-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.export-btn:hover {
+  background-color: #0056b3;
+}
+
+.export-options {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.export-options button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  width: 160px;
+}
+
+.export-options button:hover {
+  background-color: #f2f2f2;
+}
+
+/* make table scrollable horizontally */
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+
+.success-card,
+.already-card {
+  margin: 40px auto;
+  max-width: 500px;
+  text-align: center;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.already-card {
+  border-left: 6px solid #ff9800;
+}
+
+.success-card {
+  border-left: 6px solid #4caf50;
+}
+
+.success-card h2 {
+  color: #333;
+}
+
+.success-card p {
+  color: #555;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+.no-response-card, .loading-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  max-width: 450px;
+  margin: 80px auto;
+}
+.no-response-card h3 {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+.no-response-card p {
+  color: #666;
+  margin-top: 8px;
+}
+
+.export-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.export-options {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: -3px;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 10;
+}
+.export-options button {
+  border: none;
+  background: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+.export-options button:hover {
+  background: #f0f0f0;
+}
+.tick{
+  color:green;
+  font-size: 2rem;
+  
+}
+.tick1{
+  color:green;
+  font-size: 2rem;
+  color:white;
+}
+
+
+
+/* view responses css part is ending here */
+
+
+.rating{
+  color:rgb(255, 234, 0);
+  
+}
+
+
+
+/* student dashboard part is starting from here */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #20232a;
+  color: white;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.panel {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.menu li {
+  padding: 12px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  transition: 0.3s;
+  color:white;
+}
+
+.menu li:hover,
+.menu li.active {
+  background-color: #444;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #f4f4f9;
+}
+
+.welcome-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  color: gold;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #20232a;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Logout popup */
+.admin-logout-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.admin-logout-container-popup {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.admin-logout-container-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.admin-logout-container-popup-btn button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-logout-container-popup-btn button:nth-child(1) {
+  background: #ccc;
+}
+
+.admin-logout-container-popup-btn button:nth-child(2) {
+  background: #f44336;
+  color: white;
+}
+
+/* ------------------- */
+/* 📱 Responsive Design */
+/* ------------------- */
+@media (max-width: 775px) {
+  .sidebar {
+    
+    position: fixed;
+    top: 0;
+    left: -270px;
+    height: 100vh;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+    width: 100%;
+  
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .main-content {
+    padding-top: 60px;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}
+
+/* student dashboard prt is ending here */
