@@ -11,7 +11,7 @@ import {
   FiClipboard,
   FiBarChart2,
 } from "react-icons/fi";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const ViewForms = () => {
   const navigate = useNavigate();
   const [forms, setForms] = useState([]);
@@ -31,7 +31,7 @@ const ViewForms = () => {
     const fetchForms = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3001/teacher/teacherForms/${emailId}`
+          `${backendUrl}teacher/teacherForms/${emailId}`
         );
         const data = await res.json();
         setForms(Array.isArray(data) ? data : []);
@@ -48,7 +48,7 @@ const ViewForms = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this form?")) return;
     try {
-      const res = await fetch(`http://localhost:3001/teacher/deleteForm/${id}`, {
+      const res = await fetch(`${backendUrl}teacher/deleteForm/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -72,7 +72,7 @@ const ViewForms = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/teacher/getQuestions/${id}`);
+      const res = await fetch(`${backendUrl}teacher/getQuestions/${id}`);
       const data = await res.json();
 
       if (res.ok) {

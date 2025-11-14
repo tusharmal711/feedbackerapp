@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const TeacherForms = () => {
   const emailId = sessionStorage.getItem("emailId") || localStorage.getItem("emailId") || Cookies.get("teacherEmail");
   const [forms, setForms] = useState([]);
@@ -9,7 +9,7 @@ const TeacherForms = () => {
 
   useEffect(() => {
     if (emailId) {
-      axios.get(`http://localhost:5000/api/forms/${emailId}`)
+      axios.get(`${backendUrl}api/forms/${emailId}`)
         .then((res) => setForms(res.data))
         .catch((err) => console.error("Error fetching forms:", err));
     }
@@ -17,7 +17,7 @@ const TeacherForms = () => {
 
   const deleteForm = async (id) => {
     if (window.confirm("Are you sure you want to delete this form?")) {
-      await axios.delete(`http://localhost:5000/api/forms/${id}`);
+      await axios.delete(`${backendUrl}api/forms/${id}`);
       setForms(forms.filter((form) => form._id !== id));
     }
   };

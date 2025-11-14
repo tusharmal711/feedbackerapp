@@ -18,7 +18,7 @@ import { SiGoogleanalytics } from "react-icons/si";
 import { FaFileExcel, FaFileWord, FaDownload, FaFilePdf } from "react-icons/fa";
 import { MdOutlineHourglassEmpty } from "react-icons/md";
 import { motion } from "framer-motion";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const ViewResponses = () => {
   const { formId } = useParams();
   const [responses, setResponses] = useState([]);
@@ -30,7 +30,7 @@ const ViewResponses = () => {
     const fetchResponses = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3001/feedbackResponse/getResponses/${formId}`
+          `${backendUrl}feedbackResponse/getResponses/${formId}`
         );
         const data = await res.json();
 

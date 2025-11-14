@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../../CSS/index.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const TeacherProfile = () => {
   const [teacherData, setTeacherData] = useState(null);
   const [editMode, setEditMode] = useState(false);
@@ -12,7 +13,7 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3001/teacher/fetchTeacherData", {
+        const res = await fetch(`${backendUrl}teacher/fetchTeacherData`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ emailId }),
@@ -34,7 +35,7 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
   // Update profile details
   const handleSave = async () => {
     try {
-      const res = await fetch("http://localhost:3001/teacher/updateTeacher", {
+      const res = await fetch(`${backendUrl}teacher/updateTeacher`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(teacherData),
@@ -66,7 +67,7 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
     // formData.append("emailId", emailId);
 
     try {
-      const res = await fetch("http://localhost:3001/teacher/updateProfilePic", {
+      const res = await fetch(`${backendUrl}teacher/updateProfilePic`, {
         method: "PUT",
         body: formData,
       });
