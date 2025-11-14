@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import Cookies from "js-cookie";
 import { IoLogOut } from "react-icons/io5";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const TeacherDashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const TeacherDashboard = () => {
   useEffect(() => {
     const fetchTeacherData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/teacher/fetchTeacherData", {
+        const response = await fetch(`${backendUrl}teacher/fetchTeacherData`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ emailId }),
@@ -55,7 +55,7 @@ const TeacherDashboard = () => {
   // ✅ Logout function
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3001/teacher/logoutTeacher", {
+      await fetch(`${backendUrl}teacher/logoutTeacher`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

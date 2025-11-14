@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../CSS/index.css";
 import { useState } from "react";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StuReg = () => {
   const [student, setStudent] = useState({
     studName: "",
@@ -23,7 +23,7 @@ const StuReg = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/student/registerStudent", {
+      const res = await fetch(`${backendUrl}student/registerStudent`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

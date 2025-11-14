@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./../../CSS/index.css";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 
 const ApproveStudent = () => {
   const [students, setStudents] = useState([]);
@@ -11,7 +11,7 @@ const ApproveStudent = () => {
       try {
        
        
-         const res = await fetch(`http://localhost:3001/admin/pendingStudent`, {
+         const res = await fetch(`${backendUrl}admin/pendingStudent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({}),
@@ -34,7 +34,7 @@ const ApproveStudent = () => {
   // Handle approve teacher
   const handleApprove = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/admin/approveStudent/${id}`, {
+      const res = await fetch(`${backendUrl}admin/approveStudent/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const ApproveStudent = () => {
 
 const handleReject = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/admin/rejectStudent/${id}`, {
+      const res = await fetch(`${backendUrl}admin/rejectStudent/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

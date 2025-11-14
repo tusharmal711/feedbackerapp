@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../CSS/index.css";
 import Cookies from "js-cookie";
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StuLog = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const StuLog = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch("http://localhost:3001/student/loginStudent", {
+    const res = await fetch(`${backendUrl}student/loginStudent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

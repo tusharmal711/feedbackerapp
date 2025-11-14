@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../../CSS/index.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StudentProfile = () => {
   const [studentData, setStudentData] = useState(null);
   const [editMode, setEditMode] = useState(false);
@@ -17,7 +17,7 @@ const StudentProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3001/student/fetchStudentData", {
+        const res = await fetch(`${backendUrl}student/fetchStudentData`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ emailId }),
@@ -39,7 +39,7 @@ const StudentProfile = () => {
   // ✅ Update profile details
   const handleSave = async () => {
     try {
-      const res = await fetch("http://localhost:3001/student/updateStudent", {
+      const res = await fetch(`${backendUrl}student/updateStudent`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentData),
@@ -71,7 +71,7 @@ const StudentProfile = () => {
     formData.append("emailId", emailId);
 
     try {
-      const res = await fetch("http://localhost:3001/student/updateProfilePic", {
+      const res = await fetch(`${backendUrl}student/updateProfilePic`, {
         method: "PUT",
         body: formData,
       });

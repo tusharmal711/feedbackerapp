@@ -3,6 +3,7 @@ import "./../../CSS/index.css";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 import { FaWpforms } from "react-icons/fa";
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const CreateForm = () => {
   const [formData, setFormData] = useState({
   emailId: "",
@@ -73,7 +74,7 @@ useEffect(() => {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:3001/teacher/createForm", {
+      const response = await fetch(`${backendUrl}teacher/createForm`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, emailId , questions }),

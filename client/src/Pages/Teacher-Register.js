@@ -3,7 +3,7 @@ import "../CSS/index.css";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 // Teacher registration form component
 export default function TeacherReg() {
   const [teacher, setTeacher] = useState({
@@ -32,7 +32,7 @@ export default function TeacherReg() {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/teacher/registerTeacher", {
+      const res = await fetch(`${backendUrl}teacher/registerTeacher`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

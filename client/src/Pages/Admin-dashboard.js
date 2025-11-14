@@ -4,6 +4,7 @@ import { LuLogOut } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import { IoLogOut } from "react-icons/io5";
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const AdminDashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const AdminDashboard = () => {
   // ------------------ LOGOUT ------------------
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:3001/admin/logout", {
+      const res = await fetch(`${backendUrl}admin/logout`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

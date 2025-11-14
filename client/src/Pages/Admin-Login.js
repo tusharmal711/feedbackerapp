@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../CSS/index.css";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const AdminLog = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ const AdminLog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/admin/login", {
+      const res = await fetch(`${backendUrl}admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

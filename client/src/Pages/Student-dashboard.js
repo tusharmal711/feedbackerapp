@@ -6,7 +6,7 @@ import { FaPlus, FaUser, FaStar } from "react-icons/fa";
 import { BiSolidDashboard } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoLogOut } from "react-icons/io5";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StudentDashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const StudentDashboard = () => {
   useEffect(() => {
     const fetchStudentData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/student/fetchStudentData", {
+        const response = await fetch(`${backendUrl}student/fetchStudentData`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ emailId }),
@@ -40,7 +40,7 @@ const StudentDashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3001/student/logoutStudent", {
+      await fetch(`${backendUrl}student/logoutStudent`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

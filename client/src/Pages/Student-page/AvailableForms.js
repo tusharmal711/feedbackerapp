@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const AvailableForms = () => {
   const [forms, setForms] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ const AvailableForms = () => {
           return;
         }
 
-        const res = await fetch("http://localhost:3001/feedbackResponse/getAvailableForms", {
+        const res = await fetch(`${backendUrl}feedbackResponse/getAvailableForms`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

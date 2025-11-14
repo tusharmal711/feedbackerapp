@@ -11,7 +11,7 @@ const FillFeedbackForm = () => {
   const [loading, setLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [alreadySubmitted, setAlreadySubmitted] = useState(false);
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
   // 🧠 Retrieve student email from session or cookies
   const studentEmail =
     sessionStorage.getItem("studentEmail") ||
@@ -23,7 +23,7 @@ const FillFeedbackForm = () => {
     const fetchFormDetails = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3001/feedbackResponse/getForm/${formId}`
+          `${backendUrl}feedbackResponse/getForm/${formId}`
         );
         const data = await res.json();
 
@@ -38,7 +38,7 @@ const FillFeedbackForm = () => {
     const checkIfSubmitted = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3001/feedbackResponse/checkIfSubmitted?formId=${formId}&studentEmail=${studentEmail}`
+          `${backendUrl}feedbackResponse/checkIfSubmitted?formId=${formId}&studentEmail=${studentEmail}`
         );
         const data = await res.json();
 
@@ -90,7 +90,7 @@ const FillFeedbackForm = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:3001/feedbackResponse/submitFeedbackResponse",
+        `${backendUrl}feedbackResponse/submitFeedbackResponse`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

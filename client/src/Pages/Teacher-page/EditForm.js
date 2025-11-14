@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const EditForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const EditForm = () => {
   useEffect(() => {
     const fetchForm = async () => {
       try {
-        const res = await fetch(`http://localhost:3001/teacher/form/${id}`);
+        const res = await fetch(`${backendUrl}teacher/form/${id}`);
         const data = await res.json();
 
         if (res.ok) {
@@ -81,7 +81,7 @@ const EditForm = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3001/teacher/updateForm/${id}`, {
+      const res = await fetch(`${backendUrl}teacher/updateForm/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, questions }),

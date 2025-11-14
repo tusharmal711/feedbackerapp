@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./../../CSS/index.css";
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 
 const ApproveTeacher = () => {
   const [teachers, setTeachers] = useState([]);
@@ -11,7 +11,7 @@ const ApproveTeacher = () => {
       try {
        
        
-         const res = await fetch(`http://localhost:3001/admin/approvedTeacher`, {
+         const res = await fetch(`${backendUrl}admin/approvedTeacher`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({}),
