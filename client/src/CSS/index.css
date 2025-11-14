@@ -18,20 +18,21 @@ body{
 }
 .container{
 
-    background-color: white;
-    height: 20rem;
-    width:18rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2); /* 20% white */
+  border-radius: 10px;
+  height: 23rem;
+  width: 22rem;
+ 
+  margin: auto;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px); /* optional glass effect */
     
 }
 .container .text-field{
-    width:16rem;
+    width:98%;
     
     text-align: center;
-   margin-left: 1rem;
+  
 }
 .not-account-reg{
     font-family: sans-serif;
@@ -149,7 +150,7 @@ body{
     width: 60%;
  background: linear-gradient(to right, #ED2939, #ff4d5d);
 
-     height: 100vh;
+     height: 100dvh;
      border-top-left-radius: 60% 90%;
      display: flex;
      align-items: center;
@@ -262,6 +263,7 @@ body{
     position: absolute;
     top:1rem;
     left:2rem;
+    z-index: 999999;
   
    display: flex;
    flex-direction: column;
@@ -278,6 +280,156 @@ body{
    font-family: 'Pacifico', cursive;
     font-weight: 600;
     padding:0.2rem;
+}
+
+
+
+
+
+
+.web-logo-dashboard{
+    
+    top:1rem;
+    left:2rem;
+    z-index: 999999;
+  
+   display: flex;
+   flex-direction: column;
+   
+  
+}
+.web-logo-dashboard img{
+    margin-left:1.25rem;
+    width:40px;
+    height: 35px;
+}
+.web-logo-dashboard span{
+    color:#7f08ff;
+    font-size: 0.8rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+
+
+.web-logo-dashboard-mobile{
+    position: absolute;
+    top:1rem;
+    left:2rem;
+    z-index: 999999;
+  
+   display: flex;
+   flex-direction: column;
+   
+  
+}
+.web-logo-dashboard-mobile img{
+    margin-left:1.25rem;
+    width:40px;
+    height: 35px;
+}
+.web-logo-dashboard-mobile span{
+    color:#7f08ff;
+    font-size: 0.8rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+
+
+
+
+/* --------- LARGE MOBILES (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .web-logo-dashboard{
+    display: none;
+  }
+  .font-main {
+    
+    flex-direction: column;
+    height: 100vh;
+    width:100vw;
+  }
+
+  .font-image {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .font-image img {
+    height: 350px;
+  }
+
+  .font-text {
+    width: 100%;
+    height: auto;
+    border-radius: 40% 40% 0 0;
+    padding: 3rem 1.5rem;
+  }
+
+  .animate-charcter {
+    font-size: 3rem;
+  }
+  
+
+  .font-text p {
+    font-size: 1.1rem;
+  }
+
+  .font-text button {
+    width: 70%;
+    font-size: 1rem;
+  }
+}
+
+/* --------- SMALL MOBILES (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .font-image img {
+    height: 280px;
+  }
+
+  .animate-charcter {
+    font-size: 2rem;
+  }
+
+  .font-text {
+    padding: 2rem 1rem;
+    border-radius: 35% 35% 0 0;
+  }
+
+  .font-text button {
+    width: 80%;
+  }
+
+  .join-us {
+    width: 85%;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .join-us select, .join-us button {
+    width: 80%;
+  }
+
+  .join-us-cross {
+    top: -2.5rem;
+    right: -2.5rem;
+  }
+}
+
+/* EXTREMELY SMALL PHONES (≤ 360px) */
+@media (max-width: 360px) {
+  .animate-charcter {
+    font-size: 1.6rem;
+  }
+
+  .font-image img {
+    height: 230px;
+  }
+
+  .font-text p {
+    font-size: 0.95rem;
+  }
 }
 /* font page section is ending here */
 
@@ -317,17 +469,18 @@ body {
   gap: 20px;
   overflow-y: auto;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .logo {
   font-size: 20px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .panel {
   font-size: 14px;
-  color: #64748b;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -776,22 +929,7 @@ button[type="button"]:hover {
 /* Mobile View (Below 768px) */
 @media (max-width: 768px) {
   /* Sidebar becomes top bar on mobile */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-    overflow-x: auto;
-    overflow-y: visible;
-    z-index: 1000;
-  }
+
 
   .logo {
     font-size: 18px;
@@ -801,11 +939,7 @@ button[type="button"]:hover {
     display: none;
   }
 
-  .menu {
-    flex-direction: row;
-    gap: 8px;
-    overflow-x: auto;
-  }
+ 
 
   .menu li {
     padding: 8px 12px;
@@ -953,9 +1087,7 @@ button[type="button"]:hover {
     margin-top: 60px;
   }
 
-  .sidebar {
-    padding: 10px 15px;
-  }
+ 
 }
 
 /* Print Styles */
@@ -983,6 +1115,7 @@ button[type="button"]:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* ---------- Header Section ---------- */
 .profile-header {
   display: flex;
   align-items: center;
@@ -991,13 +1124,33 @@ button[type="button"]:hover {
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.profile-avatar-section {
+  text-align: center;
+  position: relative;
 }
 
 .profile-avatar {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 3px solid #4f46e5;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.change-photo-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.4rem;
 }
 
 .profile-info {
@@ -1023,12 +1176,14 @@ button[type="button"]:hover {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .edit-btn:hover {
   background: #3730a3;
 }
 
+/* ---------- Details Section ---------- */
 .profile-details {
   margin-top: 2rem;
   background: white;
@@ -1079,32 +1234,78 @@ button[type="button"]:hover {
   background: #15803d;
 }
 
+/* ---------- RESPONSIVE STYLES ---------- */
 
-/* For Profile Picture  */
+/* Tablets */
+@media (max-width: 1024px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.profile-avatar-section {
-  text-align: center;
-  position: relative;
+  .profile-info {
+    margin-left: 0;
+  }
+
+  .edit-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .profile-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 }
 
-.profile-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #4f46e5;
-  cursor: pointer;
-  object-fit: cover;
-  transition: transform 0.3s;
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.2rem;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-header {
+    padding: 1rem;
+  }
+
+  .edit-btn {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .profile-details {
+    padding: 1rem;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.profile-avatar:hover {
-  transform: scale(1.05);
-}
+/* Small Phones */
+@media (max-width: 480px) {
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
 
-.change-photo-text {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-top: 0.4rem;
+  .profile-info p {
+    font-size: 0.9rem;
+  }
+
+  .edit-btn,
+  .save-btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .profile-avatar {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 
@@ -1120,42 +1321,90 @@ button[type="button"]:hover {
 
 
 /* student registration section is starting from here */
+/* Main grid container */
 .student-reg-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 1rem; 
-  padding: 1.5rem;
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.2); /* 20% white */
   border-radius: 10px;
-  max-width: 800px;
+  width: 50%;
   margin: auto;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px); /* optional glass effect */
 }
 
+/* Title */
 .student-reg-container h2 {
-  grid-column: span 2; 
   text-align: center;
   margin-bottom: 1rem;
   font-family: sans-serif;
 }
 
+/* Apply grid to form (NOT display: contents!) */
 .student-reg-container form {
-  display: contents; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
+/* Text Field Styling */
 .text-field {
   display: flex;
   flex-direction: column;
 }
 
+/* Button full width across both columns */
 .stu-log-btn {
-  grid-column: span 2; 
+  grid-column: span 2;
   text-align: center;
 }
-.not-account-log{
-   font-family: sans-serif;
-   
-    transform: translateX(50%);
+
+.stu-log-btn button {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: none;
+  background: #ed2939;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
 }
+
+/* Login text */
+.not-account-log {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: sans-serif;
+}
+.text-field input{
+  width: 100%;
+}
+.text-field select{
+  width: 100%; 
+}
+/* --------------------------- */
+/*        RESPONSIVE           */
+/* --------------------------- */
+
+@media (max-width: 700px) {
+  .student-reg-container{
+    margin-top: 3rem;
+    
+    width: 90%;
+  }
+  .student-reg-container form {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+  
+  }
+
+  .stu-log-btn {
+    grid-column: span 1; /* Single column */
+  }
+
+  .not-account-log {
+    transform: none;
+    text-align: center;
+  }
+}
+
 /* student registration secton is ending here  */
 
 
@@ -1171,9 +1420,10 @@ button[type="button"]:hover {
     width: 27%;
     height: 100%;
    position: fixed;
+  
 }
 .admin-profile{
-    background-color:rgb(0, 0, 71);
+    
    
     height: 4rem;
     display: flex;
@@ -1287,6 +1537,69 @@ button[type="button"]:hover {
   background-color: #f1f1f1;
   transition: 0.2s ease-in-out;
 }
+
+
+
+
+@media (max-width: 768px) {
+  .teacher-table-container {
+    padding: 5px;
+    margin: 30px auto;
+    overflow-x: scroll;
+  }
+
+  .teacher-table-container table th,
+  .teacher-table-container table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Large Mobiles (max-width: 600px) */
+@media (max-width: 600px) {
+  .teacher-table-container {
+    padding: 12px;
+  
+    border-radius: 10px;
+  }
+
+  .teacher-table-container table {
+    min-width: 500px;
+  }
+
+  .teacher-table-container table th,
+  .teacher-table-container table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+}
+
+/* Small Mobiles (max-width: 400px) */
+@media (max-width: 400px) {
+  .teacher-table-container {
+    padding: 10px;
+    
+    border-radius: 8px;
+  }
+
+  .teacher-table-container table {
+    min-width: 450px;
+  }
+
+  .teacher-table-container table th,
+  .teacher-table-container table td {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
 
 .approve-btn {
   background-color: #28a745;
@@ -2220,6 +2533,7 @@ textarea {
   color: white;
   padding: 20px;
   transition: all 0.3s ease;
+  
 }
 
 .logo {
@@ -2292,16 +2606,25 @@ textarea {
 
 /* Hamburger (hidden on desktop) */
 .hamburger {
+  height:5rem;
+  width: 100%;
   display: none;
   font-size: 2rem;
   color: #20232a;
   position: fixed;
   top: 15px;
-  left: 15px;
+ 
+  background-color: white;
+  left: 0px;
   z-index: 1000;
   cursor: pointer;
 }
-
+.ham-icon{
+  margin-top:1rem;
+}
+.hamburgerBackground{
+   background-color:#20232a;
+}
 /* Logout popup */
 .admin-logout-container {
   position: fixed;
@@ -2345,34 +2668,39 @@ textarea {
 /* ------------------- */
 /* 📱 Responsive Design */
 /* ------------------- */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 15px;
+  text-align: right;
+  font-size: 28px;
+  color: black;
+  z-index: 1100;
+  cursor: pointer;
+  padding:12px;
+
+}
+
+
 @media (max-width: 775px) {
-  .sidebar {
-    
-    position: fixed;
-    top: 0;
-    left: -270px;
-    height: 100vh;
-    z-index: 999;
-    transition: all 0.3s ease;
-  }
-
-  .sidebar.open {
-    left: 0;
+  .sidebar{
+    margin-top:5rem;
     width: 100%;
-  
+    transform: translateX(-100%);
   }
-
-  .hamburger {
+  .hamburger{
     display: block;
+    
+  }
+  .hamburgerBackground{
+    color:white;
+  }
+  .showNavbar{
+  
+    transform: translateX(0);
   }
 
-  .main-content {
-    padding-top: 60px;
-  }
-
-  .stats {
-    flex-direction: column;
-  }
 }
 
 /* student dashboard prt is ending here */

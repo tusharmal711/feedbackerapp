@@ -5,7 +5,7 @@ import { RiLogoutBoxRFill } from "react-icons/ri";
 import { FaPlus, FaUser, FaStar } from "react-icons/fa";
 import { BiSolidDashboard } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { IoLogOut } from "react-icons/io5";
 
 const StudentDashboard = () => {
   const location = useLocation();
@@ -18,7 +18,9 @@ const StudentDashboard = () => {
     sessionStorage.getItem("studentEmail") ||
     localStorage.getItem("studentEmail") ||
     Cookies.get("studentEmail");
-
+  const toggleSidebar = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
   useEffect(() => {
     const fetchStudentData = async () => {
       try {
@@ -49,7 +51,7 @@ const StudentDashboard = () => {
       Cookies.remove("teacherEmail");
       localStorage.removeItem("emailId");
       sessionStorage.removeItem("emailId");
-      navigate("/student_login");
+      navigate("/");
 
       window.history.pushState(null, "", window.location.href);
       window.onpopstate = function () {
@@ -76,14 +78,23 @@ const StudentDashboard = () => {
       )}
 
       {/* Hamburger for mobile */}
-      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <GiHamburgerMenu />
+       <div
+        className={`hamburger ${isMenuOpen ? "hamburgerBackground" : ""}`}
+        onClick={toggleSidebar}
+      >
+         <div className="web-logo-dashboard-mobile">
+        <img src="/Images/FeedBacker-logo.png" alt="logo" />
+        <span className="web-logo-name">FeedBacker</span>
       </div>
-
+    <GiHamburgerMenu className="ham-icon"/>
+         </div>
       {/* Sidebar */}
-      <aside className={`sidebar ${isMenuOpen ? "open" : ""}`}>
-        <h2 className="logo">🎓 FeedBacker</h2>
-        <p className="panel">Student Panel</p>
+      <aside className={`sidebar ${isMenuOpen ? "showNavbar" : ""}`}>
+        <div className="web-logo-dashboard">
+        <img src="/Images/FeedBacker-logo.png" alt="logo" />
+        <span className="web-logo-name">FeedBacker</span>
+      </div>
+        
 
         <ul className="menu">
           <li
@@ -116,8 +127,11 @@ const StudentDashboard = () => {
             <FaUser /> Profile
           </li>
 
-          <li onClick={() => setShowLogout(true)}>
-            <RiLogoutBoxRFill /> Logout
+          <li onClick={() => {setShowLogout(true);
+            setIsMenuOpen(false);
+          }}
+          >
+            <IoLogOut size={21} /> Logout
           </li>
         </ul>
       </aside>
