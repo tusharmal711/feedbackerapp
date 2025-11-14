@@ -2689,6 +2689,15 @@ textarea {
     width: 100%;
     transform: translateX(-100%);
   }
+  .view-container{
+    width: 100%;
+  }
+  .form-list{
+    width: 100%;
+  }
+  .form-card{
+    width:90%;
+  }
   .hamburger{
     display: block;
     
