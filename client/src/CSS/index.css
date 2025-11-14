@@ -2691,13 +2691,14 @@ textarea {
   }
   .view-container{
     width: 100%;
+    padding:0.3rem;
   }
   .form-list{
     width: 100%;
   }
   .form-card{
     width:90%;
-    padding:0.2rem;
+    
   }
   .hamburger{
     display: block;
