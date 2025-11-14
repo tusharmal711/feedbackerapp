@@ -18,7 +18,7 @@ const cookieParser = require("cookie-parser");
 
 const allowedOrigins = [
 
-  "http://localhost:3000","https://feedbacker-student.vercel.app/"
+  "http://localhost:3000","https://feedbacker-student.vercel.app"
 ];
 app.use(express.json());
 app.use(cors({
