@@ -190,8 +190,9 @@ const ViewResponses = () => {
 
         <div
           className="export-dropdown"
-          onMouseEnter={() => setShowExport(true)}
-          onMouseLeave={() => setShowExport(false)}
+          onClick={() => setShowExport(prev => !prev)}
+          
+           
         >
           <button className="export-btn flex items-center gap-2">
             <FaDownload /> Export

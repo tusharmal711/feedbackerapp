@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../../CSS/index.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+import { FaSchool } from "react-icons/fa";
+import { IoSchool } from "react-icons/io5";
 const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StudentProfile = () => {
   const [studentData, setStudentData] = useState(null);
@@ -119,8 +121,8 @@ const StudentProfile = () => {
         <div className="profile-info">
           <h2>{studentData.studName}</h2>
           <p>{studentData.emailId}</p>
-          <p>🏫 {studentData.college}</p>
-          <p>🎓 {studentData.deptName}</p>
+          <p><FaSchool /> {studentData.college}</p>
+          <p><IoSchool /> {studentData.deptName}</p>
         </div>
 
         <button className="edit-btn" onClick={() => setEditMode(!editMode)}>

@@ -9,9 +9,9 @@ const Font=()=>{
     const RoleSubmit=()=>{
         
         if(role==="teacher"){
-          navigate("/teacher_registration");
+          navigate("/teacher_login");
         }else if(role==="student"){
-          navigate("/student_registration");
+          navigate("/student_login");
         }else if(role==="admin"){
           navigate("/admin_login");
         }

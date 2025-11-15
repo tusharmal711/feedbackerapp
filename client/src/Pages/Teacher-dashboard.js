@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import Cookies from "js-cookie";
 import { IoLogOut } from "react-icons/io5";
+
 const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const TeacherDashboard = () => {
   const location = useLocation();
