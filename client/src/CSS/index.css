@@ -1262,7 +1262,7 @@ button[type="button"]:hover {
 /* Mobile */
 @media (max-width: 768px) {
   .profile-container {
-    margin-top: 1rem;
+   
     padding:0rem;
     padding-top:1rem;
    
