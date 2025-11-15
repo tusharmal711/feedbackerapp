@@ -1792,7 +1792,37 @@ button[type="button"]:hover {
   margin-top: 0.5rem;
   color: #111;
 }
+.teacher-dashboard-profile-img{
+  border-radius: 50%;
+  height:45px;
+  width:45px;
+  border:2px solid rgb(0, 132, 255);
+/* box-shadow: 0 0 8px rgba(0, 132, 255, 0.8); */
+}
+.profile-email{
+  display: flex;
+  align-items: center;
+ 
+}
 
+.profile-email p{
+  font-size: 0.8rem;
+  border:2px solid rgb(0, 132, 255);
+   /* box-shadow: 0 0 8px rgba(0, 132, 255, 0.8); */
+   padding:0.1rem;
+   padding-bottom: 0.2rem;
+   padding-right: 0.4rem;
+   border-bottom-right-radius:10rem ;
+   border-top-right-radius:10rem ;
+   border-left: none;
+   clip-path: inset(4 -10px 0 0); 
+    padding-left:7px;
+    margin-left: -4px;
+}
+.confirm{
+  background-color: green;
+  color:white;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .dashboard-container {

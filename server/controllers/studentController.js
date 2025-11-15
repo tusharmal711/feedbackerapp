@@ -94,41 +94,40 @@ const updateStudent = async (req, res) => {
 };
 
 // Update Student Profile Picture
-const updateProfilePic = async (req, res) => {
+
+const changeStudentDp = async (req, res) => {
   try {
-    const file = req.file;
-    if (!file) return res.status(400).json({ error: "No file uploaded" });
+    const emailId = req.body.emailId;
+    const dp = req.file ? req.file.path : null; // Cloudinary URL
 
-    // Upload image buffer to Cloudinary
-    const result = await cloudinary.uploader.upload_stream(
-      { folder: "student_profiles" },
-      async (error, uploadResult) => {
-        if (error) {
-          console.error("Cloudinary error:", error);
-          return res.status(500).json({ error: "Image upload failed" });
-        }
+    console.log("Email:", emailId);
+    console.log(dp);
+    if (!emailId || !dp) {
+      return res.status(400).json({ error: "Email and image are required" });
+    }
 
-        // Update student document in MongoDB
-        const student = await Student.findByIdAndUpdate(
-          req.body.studentId,
-          { profilePic: uploadResult.secure_url },
-          { new: true }
-        );
-
-        res.status(200).json({
-          success: true,
-          message: "Profile picture updated successfully",
-          student,
-        });
-      }
+    const updateDp = await student.updateOne(
+      { emailId },
+      { $set: { profilePic: dp } }
     );
 
-    result.end(file.buffer);
-  } catch (err) {
-    console.error("Upload error:", err);
-    res.status(500).json({ error: "Internal server error" });
+    if (updateDp.modifiedCount === 0) {
+      return res.status(404).json({
+        error: "User not found or DP not updated",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Successfully updated",
+      data: { profilePic: dp },
+    });
+
+  } catch (error) {
+    console.error("Error updating DP:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
 
-module.exports = { registerStudent, loginStudent, logoutStudent ,fetchStudentData, updateStudent, updateProfilePic  };
+
+module.exports = { registerStudent, loginStudent, logoutStudent ,fetchStudentData, updateStudent, changeStudentDp  };

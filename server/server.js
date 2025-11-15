@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 //const cors = require("cors");
+const teacher = require('./models/teacher');
 const cors=require('cors');
 const main=require("./db");
 const teacherRoute = require("./routes/teacherRoute");
@@ -10,8 +11,9 @@ const feedbackFormRoute=require("./routes/feedbackFormRoute");
 const questionRoute = require("./routes/questionRoute");
 const feedbackResponse=require("./routes/feedbackResponseRoute");
 const feedbackStatsRoute = require("./routes/feedbackCountRoute");
-
-
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer =require("multer");
 const admin = require('./models/admin');
 require('dotenv').config();
 const cookieParser = require("cookie-parser");
@@ -50,6 +52,19 @@ app.use("/stats", feedbackStatsRoute);
 //     let r= await admin.find();
 //     res.send("fetched"+r);
 // })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

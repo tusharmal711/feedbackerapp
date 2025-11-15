@@ -16,7 +16,7 @@ const TeacherDashboard = () => {
   const [teacherData, setTeacherData] = useState(null);
   const [showLogout, setShowLogout] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+ const [imagePreview, setImagePreview] = useState(null);
   const emailId =
     sessionStorage.getItem("emailId") ||
     localStorage.getItem("emailId") ||
@@ -27,7 +27,60 @@ const TeacherDashboard = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  // ✅ Fetch teacher data
+
+
+const [formCount,setFormCount]=useState(0);
+const [responseCount,setResponseCount]=useState(0);
+useEffect(() => {
+  const getFormCount = async () => {
+    try {
+      const response = await fetch(`${backendUrl}teacher/countNumberOfForm`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emailId }),
+      });
+
+      const result = await response.json();
+      console.log("Total documents:", result.count);
+      setFormCount(result.count);
+    } catch (error) {
+      console.error("Error fetching count:", error);
+    }
+  };
+
+  if (emailId) {
+    getFormCount();
+  }
+  
+}, [emailId]);
+
+
+useEffect(() => {
+  const getResponseCount = async () => {
+    try {
+      const response = await fetch(`${backendUrl}teacher/countNumberOfResponse`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emailId }),
+      });
+
+      const result = await response.json();
+      console.log("Total documents:", result.count);
+      setResponseCount(result.count);
+    } catch (error) {
+      console.error("Error fetching count:", error);
+    }
+  };
+
+  if (emailId) {
+    getResponseCount();
+  }
+  
+}, [emailId]);
+
+
+
+  //Fetch teacher data
   useEffect(() => {
     const fetchTeacherData = async () => {
       try {
@@ -40,20 +93,35 @@ const TeacherDashboard = () => {
         const result = await response.json();
         console.log("API response:", result);
         setTeacherData(result.data);
+        setImagePreview(result.data?.profilePic);
+       
       } catch (error) {
         console.error("Error fetching teacher data:", error);
       }
     };
 
+
+    
+
+
+
+
+
+
+
     if (emailId) {
       console.log("Email ID being sent:", emailId);
       fetchTeacherData();
+        const interval = setInterval(fetchTeacherData, 1000);
+
+  // Cleanup interval on unmount
+         return () => clearInterval(interval);
     } else {
       console.warn("No emailId found in sessionStorage");
     }
   }, [emailId]);
 
-  // ✅ Logout function
+  //Logout function
   const handleLogout = async () => {
     try {
       await fetch(`${backendUrl}teacher/logoutTeacher`, {
@@ -81,7 +149,7 @@ const TeacherDashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* ✅ Logout Popup */}
+      {/* Logout Popup */}
       {showLogout && (
         <div className="admin-logout-container">
           <div className="admin-logout-container-popup">
@@ -94,7 +162,7 @@ const TeacherDashboard = () => {
         </div>
       )}
 
-      {/* ✅ Hamburger */}
+      {/* Hamburger */}
       <div
         className={`hamburger ${isSidebarOpen ? "hamburgerBackground" : ""}`}
         onClick={toggleSidebar}
@@ -106,12 +174,30 @@ const TeacherDashboard = () => {
         <GiHamburgerMenu className="ham-icon"/>
       </div>
 
-      {/* ✅ Sidebar */}
+      {/* Sidebar */}
       <aside className={`sidebar ${isSidebarOpen ? "showNavbar" : ""}`}>
          <div className="web-logo-dashboard">
         <img src="/Images/FeedBacker-logo.png" alt="logo" />
         <span className="web-logo-name">FeedBacker</span>
       </div>
+
+          <div className="profile-email">
+          <img
+              src={
+                imagePreview || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              }
+              alt="Profile Avatar"
+              className="teacher-dashboard-profile-img"
+            />
+
+            <p>
+              {teacherData?.emailId}
+            </p>
+            </div> 
+
+
+
+
 
         <ul className="menu">
           <li
@@ -165,10 +251,10 @@ const TeacherDashboard = () => {
         </ul>
       </aside>
 
-      {/* ✅ Overlay (click to close) */}
+      {/* Overlay (click to close) */}
       {isSidebarOpen && <div className="overlay" onClick={toggleSidebar}></div>}
 
-      {/* ✅ Main Content */}
+      {/* Main Content */}
       <main className="main-content">
         {location.pathname === "/teacher_dashboard" ? (
           <>
@@ -180,11 +266,11 @@ const TeacherDashboard = () => {
             <div className="stats">
               <div className="stat-card">
                 <p>Total Forms</p>
-                <h3>12</h3>
+                <h3>{formCount}</h3>
               </div>
               <div className="stat-card">
                 <p>Total Responses</p>
-                <h3>245</h3>
+                <h3>{responseCount}</h3>
               </div>
               <div className="stat-card">
                 <p>Avg. Rating</p>

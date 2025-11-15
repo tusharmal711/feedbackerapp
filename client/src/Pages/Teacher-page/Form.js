@@ -3,6 +3,8 @@ import "./../../CSS/index.css";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 import { FaWpforms } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { FaRegEye } from "react-icons/fa";
 const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const CreateForm = () => {
   const [formData, setFormData] = useState({
@@ -91,7 +93,7 @@ useEffect(() => {
       console.log(result);
     } catch (error) {
       console.error(error);
-      setMessage("❌ Failed to create form. Please try again.");
+      setMessage("Failed to create form. Please try again.");
     }
   };
 
@@ -168,9 +170,9 @@ useEffect(() => {
             </div>
           ))}
 
-          <button type="button" onClick={addQuestion}>➕ Add Question</button>
-          <button type="button" onClick={handlePreview}>👁 Preview</button>
-          <button type="submit">✅ Submit</button>
+          <button type="button" onClick={addQuestion}><FaPlus /> Add Question</button>
+          <button type="button" onClick={handlePreview}><FaRegEye /> Preview</button>
+          <button type="submit">✔ Submit</button>
 
           {message && <p className="success-message">{message}</p>}
         </form>
@@ -201,7 +203,7 @@ useEffect(() => {
           ))}
 
           <button onClick={() => setPreviewMode(false)}>✏ Edit</button>
-          <button onClick={handleSubmit}>✅ Confirm & Submit</button>
+          <button onClick={handleSubmit} className="confirm">✔ Confirm & Submit</button>
         </div>
       )}
     </div>

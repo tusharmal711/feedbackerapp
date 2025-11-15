@@ -36,6 +36,10 @@ const studentSchema = new Schema({
      password:{
         type:String,  required:true
     },
+     profilePic: {
+    type: String,
+    default: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", // default profile image
+  },
     isApprove:{
         type:Boolean,default:false
     }

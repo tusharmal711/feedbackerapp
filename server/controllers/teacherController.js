@@ -4,9 +4,16 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken');
 const teacher = require('../models/teacher');
+const FeedbackForm = require("../models/feedbackForm");
+const FeedbackResponse = require("../models/feedbackResponse");
 const {validateTeacher}= require("../utils/validator");
 
 // const {cloudinary}= require("../utils/cloudinary.js");
+
+
+
+
+
 
 
 
@@ -116,7 +123,50 @@ const updateTeacher = async (req, res) => {
   }
 };
 
+const countNumberOfForm = async (req, res) => {
+  try {
+    const { emailId } = req.body;
 
+    if (!emailId) {
+      return res.status(400).json({ error: "emailId is required" });
+    }
+
+    const count = await FeedbackForm.countDocuments({ emailId });
+
+    return res.status(200).json({
+      message: "Count fetched successfully",
+      count: count,
+    });
+
+  } catch (error) {
+    console.error("Error counting documents:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+
+
+
+const countNumberOfResponse = async (req, res) => {
+  try {
+    const { emailId } = req.body;
+
+    if (!emailId) {
+      return res.status(400).json({ error: "emailId is required" });
+    }
+
+    const count = await FeedbackResponse.countDocuments({teacherEmail : emailId });
+
+    return res.status(200).json({
+      message: "Count fetched successfully",
+      count: count,
+    });
+
+  } catch (error) {
+    console.error("Error counting documents:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 // For profile pic upload and update
 
 //  const updateProfilePic = async (req, res) => {
@@ -196,6 +246,37 @@ const updateProfilePic = async (req, res) => {
 
 
 
+const changeTeacherDp = async (req, res) => {
+  try {
+    const emailId = req.body.emailId;
+    const dp = req.file ? req.file.path : null; // Cloudinary URL
+
+    
+    if (!emailId || !dp) {
+      return res.status(400).json({ error: "Email and image are required" });
+    }
+
+    const updateDp = await teacher.updateOne(
+      { emailId },
+      { $set: { profilePic: dp } }
+    );
+
+    if (updateDp.modifiedCount === 0) {
+      return res.status(404).json({
+        error: "User not found or DP not updated",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Successfully updated",
+      data: { profilePic: dp },
+    });
+
+  } catch (error) {
+    console.error("Error updating DP:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 
 
@@ -205,7 +286,10 @@ module.exports = {
   logoutTeacher,
   fetchTeacherData,
   updateTeacher,
-  updateProfilePic
+  updateProfilePic,
+  changeTeacherDp,
+  countNumberOfForm,
+  countNumberOfResponse
 };
 
 

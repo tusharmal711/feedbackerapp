@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { FaSchool } from "react-icons/fa";
 import { IoSchool } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const TeacherProfile = () => {
   const [teacherData, setTeacherData] = useState(null);
@@ -28,6 +29,10 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
       }
     };
     fetchData();
+    const interval = setInterval(fetchData, 1000);
+
+  // Cleanup interval on unmount
+         return () => clearInterval(interval);
   }, [emailId]);
 
   const handleChange = (e) => {
@@ -59,34 +64,34 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
 
   // Upload new profile picture
   const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  const file = e.target.files[0];
+  if (!file) return;
 
-    setImagePreview(URL.createObjectURL(file)); // Show preview instantly
+  setImagePreview(URL.createObjectURL(file));
 
-    const formData = new FormData();
-    formData.append("profilePic", file);
-    // formData.append("emailId", emailId);
+  const formData = new FormData();
+  formData.append("dp", file);  // backend expects "dp"
+  formData.append("emailId", emailId);
 
-    try {
-      const res = await fetch(`${backendUrl}teacher/updateProfilePic`, {
-        method: "PUT",
-        body: formData,
-      });
+  try {
+    const res = await fetch(`${backendUrl}teacher/changeTeacherDp`, {
+      method: "POST",
+      body: formData, // NO HEADERS
+    });
 
-      const result = await res.json();
+    const result = await res.json();
 
-      if (res.ok) {
-        toast.success("Profile picture updated!");
-        setTeacherData(result.data);
-      } else {
-        toast.error(result.error || "Upload failed");
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error("Error uploading image");
+    if (res.ok) {
+      toast.success("Profile picture updated!");
+      
+    } else {
+      toast.error(result.error || "Upload failed");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    toast.error("Error uploading image");
+  }
+};
 
   if (!teacherData) return <p>Loading...</p>;
 
@@ -97,8 +102,7 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
           <label htmlFor="upload-photo">
             <img
               src={
-                imagePreview ||
-                "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                imagePreview 
               }
               alt="Profile Avatar"
               className="profile-avatar"
@@ -116,7 +120,7 @@ const emailId= sessionStorage.getItem("emailId") || localStorage.getItem("emailI
 
         <div className="profile-info">
           <h2>{teacherData.teacherName}</h2>
-          <p>{teacherData.emailId}</p>
+          <p><MdEmail /> {teacherData.emailId}</p>
           <p><FaSchool /> {teacherData.college}</p>
           <p><IoSchool /> {teacherData.deptName}</p>
         </div>

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { FaSchool } from "react-icons/fa";
 import { IoSchool } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 const backendUrl = process.env.REACT_APP_BACKEND_URL; 
 const StudentProfile = () => {
   const [studentData, setStudentData] = useState(null);
@@ -32,6 +33,10 @@ const StudentProfile = () => {
       }
     };
     fetchData();
+     const interval = setInterval(fetchData, 1000);
+
+  // Cleanup interval on unmount
+         return () => clearInterval(interval);
   }, [emailId]);
 
   const handleChange = (e) => {
@@ -61,7 +66,7 @@ const StudentProfile = () => {
     }
   };
 
-  // ✅ Upload new profile picture
+  //  Upload new profile picture
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -69,12 +74,12 @@ const StudentProfile = () => {
     setImagePreview(URL.createObjectURL(file)); // Show preview instantly
 
     const formData = new FormData();
-    formData.append("profilePic", file);
+     formData.append("dp", file);
     formData.append("emailId", emailId);
 
     try {
-      const res = await fetch(`${backendUrl}student/updateProfilePic`, {
-        method: "PUT",
+      const res = await fetch(`${backendUrl}student/changeStudentDp`, {
+        method: "POST",
         body: formData,
       });
 
@@ -82,7 +87,7 @@ const StudentProfile = () => {
 
       if (res.ok) {
         toast.success("Profile picture updated!");
-        setStudentData(result.data);
+        
       } else {
         toast.error(result.error || "Upload failed");
       }
@@ -99,10 +104,9 @@ const StudentProfile = () => {
       <div className="profile-header">
         <div className="profile-avatar-section">
           <label htmlFor="upload-photo">
-            <img
+             <img
               src={
-                imagePreview ||
-                "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                imagePreview || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
               }
               alt="Profile Avatar"
               className="profile-avatar"
@@ -120,7 +124,7 @@ const StudentProfile = () => {
 
         <div className="profile-info">
           <h2>{studentData.studName}</h2>
-          <p>{studentData.emailId}</p>
+          <p><MdEmail /> {studentData.emailId}</p>
           <p><FaSchool /> {studentData.college}</p>
           <p><IoSchool /> {studentData.deptName}</p>
         </div>

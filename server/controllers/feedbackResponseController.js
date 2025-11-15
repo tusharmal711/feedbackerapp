@@ -107,6 +107,26 @@ const submitFeedbackResponse = async (req, res) => {
   }
 };
 
+const countStudentResponse = async (req, res) => {
+  try {
+    const { emailId } = req.body;
+
+    if (!emailId) {
+      return res.status(400).json({ error: "emailId is required" });
+    }
+
+    const count = await FeedbackResponse.countDocuments({studentEmail : emailId });
+
+    return res.status(200).json({
+      message: "Count fetched successfully",
+      count: count,
+    });
+
+  } catch (error) {
+    console.error("Error counting documents:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 // 🔍 Check if student already submitted
 const checkIfSubmitted = async (req, res) => {
@@ -190,8 +210,10 @@ const  getResponsesByForm = async (req, res) => {
 
 
 module.exports = { getAvailableForms,
+  countStudentResponse,
   getFormById,
   submitFeedbackResponse,
   getResponsesByForm,
-  checkIfSubmitted
+  checkIfSubmitted,
+  
  };

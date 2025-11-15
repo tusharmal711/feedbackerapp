@@ -13,8 +13,12 @@ const StudentDashboard = () => {
   const [studentData, setStudentData] = useState(null);
   const [showLogout, setShowLogout] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+ const [imagePreview, setImagePreview] = useState(null);
   const emailId =
+    sessionStorage.getItem("studentEmail") ||
+    localStorage.getItem("studentEmail") ||
+    Cookies.get("studentEmail");
+      const stuEmail =
     sessionStorage.getItem("studentEmail") ||
     localStorage.getItem("studentEmail") ||
     Cookies.get("studentEmail");
@@ -31,12 +35,78 @@ const StudentDashboard = () => {
         });
         const result = await response.json();
         setStudentData(result.data);
+         setImagePreview(result.data?.profilePic);
       } catch (error) {
         console.error("Error fetching student data:", error);
       }
     };
     if (emailId) fetchStudentData();
+    const interval = setInterval(fetchStudentData, 1000);
+
+  // Cleanup interval on unmount
+         return () => clearInterval(interval);
   }, [emailId]);
+
+
+
+
+const [formCount,setFormCount]=useState(0);
+ useEffect(() => {
+     const fetchFormsCount = async () => {
+       try {
+         if (!stuEmail) {
+           console.error("Student email not found");
+           
+           return;
+         }
+ 
+         // Fetch available forms
+         const res = await fetch(`${backendUrl}feedbackResponse/getAvailableForms`, {
+           method: "POST",
+           headers: { "Content-Type": "application/json" },
+           body: JSON.stringify({ stuEmail }),
+         });
+ 
+         const data = await res.json();
+        setFormCount(data.count);
+      } catch (error) {
+        console.error("Error fetching forms:", error);
+       
+      } 
+    };
+
+    fetchFormsCount();
+  }, [stuEmail]);
+
+
+const [responseCount,setResponseCount]=useState(0);
+useEffect(() => {
+  const getResponseCount = async () => {
+    try {
+      const response = await fetch(`${backendUrl}feedbackResponse/countStudentResponse`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emailId }),
+      });
+
+      const result = await response.json();
+      console.log("Total documents:", result.count);
+      setResponseCount(result.count);
+    } catch (error) {
+      console.error("Error fetching count:", error);
+    }
+  };
+
+  if (emailId) {
+    getResponseCount();
+  }
+  
+}, [emailId]);
+
+
+
+
+
 
   const handleLogout = async () => {
     try {
@@ -95,6 +165,20 @@ const StudentDashboard = () => {
         <span className="web-logo-name">FeedBacker</span>
       </div>
         
+         <div className="profile-email">
+          <img
+              src={
+                imagePreview || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              }
+              alt="Profile Avatar"
+              className="teacher-dashboard-profile-img"
+            />
+
+            <p>
+              {studentData?.emailId}
+            </p>
+            </div> 
+
 
         <ul className="menu">
           <li
@@ -148,11 +232,11 @@ const StudentDashboard = () => {
             <div className="stats">
               <div className="stat-card">
                 <p>Total Forms</p>
-                <h3>12</h3>
+                <h3>{formCount}</h3>
               </div>
               <div className="stat-card">
                 <p>Total Submitted</p>
-                <h3>245</h3>
+                <h3>{responseCount}</h3>
               </div>
               <div className="stat-card">
                 <p>Avg. Rating</p>
