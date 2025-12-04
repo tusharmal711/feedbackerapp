@@ -15,8 +15,9 @@ const StuLog = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+const [isLoggingIn, setIsLoggingIn] = useState(false);
   const handleSubmit = async (e) => {
+    setIsLoggingIn(true);
   e.preventDefault();
   try {
     const res = await fetch(`${backendUrl}student/loginStudent`, {
@@ -31,8 +32,8 @@ const StuLog = () => {
     const data = await res.json();
 
     if (res.ok && data.success) {
-      toast.success(data.message || "Login successful!", { position: "top-right" });
-      console.log("Login response:", data);
+      // toast.success(data.message || "Login successful!", { position: "top-right" });
+      // console.log("Login response:", data);
 
 
 
@@ -104,7 +105,7 @@ const StuLog = () => {
           </div>
 
           <div className="stu-log-btn">
-            <button type="submit">Login</button>
+            <button type="submit"disabled={isLoggingIn}>{isLoggingIn ? "Logging..." : "Login"}</button>
           </div>
         </form>
 

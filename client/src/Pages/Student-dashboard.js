@@ -14,6 +14,7 @@ const StudentDashboard = () => {
   const [showLogout, setShowLogout] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
  const [imagePreview, setImagePreview] = useState(null);
+ const [isLoggingOut, setIsLoggingOut] = useState(false);
   const emailId =
     sessionStorage.getItem("studentEmail") ||
     localStorage.getItem("studentEmail") ||
@@ -109,6 +110,7 @@ useEffect(() => {
 
 
   const handleLogout = async () => {
+    setIsLoggingOut(true);
     try {
       await fetch(`${backendUrl}student/logoutStudent`, {
         method: "POST",
@@ -141,7 +143,7 @@ useEffect(() => {
             <p>Are you sure you want to logout?</p>
             <div className="admin-logout-container-popup-btn">
               <button onClick={() => setShowLogout(false)}>Cancel</button>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogout}disabled={isLoggingOut}>{isLoggingOut ? "Logging out..." : "Logout"}</button>
             </div>
           </div>
         </div>

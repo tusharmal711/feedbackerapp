@@ -11,12 +11,13 @@ const TeacherLog = () => {
     emailId: "",
     password: "",
   });
-
+const [isLoggingIn, setIsLoggingIn] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
 const handleSubmit = async (e) => {
+  setIsLoggingIn(true);
   e.preventDefault();
   try {
     const res = await fetch(`${backendUrl}teacher/loginTeacher`, {
@@ -42,11 +43,11 @@ const handleSubmit = async (e) => {
         sameSite: "Strict",
       });
 
-      toast.success(data.message || "Login successful!", {
-        position: "top-right",
-      });
+      // toast.success(data.message || "Login successful!", {
+      //   position: "top-right",
+      // });
 
-      console.log("Teacher Login response:", data);
+      
 
       // Redirect after toast
       setTimeout(() => {
@@ -102,7 +103,7 @@ const handleSubmit = async (e) => {
           </div>
 
           <div className="stu-log-btn">
-            <button type="submit">Login</button>
+            <button type="submit" disabled={isLoggingIn}>{isLoggingIn ? "Logging..." : "Login"}</button>
           </div>
         </form>
 
