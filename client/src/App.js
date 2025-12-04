@@ -55,10 +55,11 @@ function App() {
             <Route exact path="create_form" element={<CreateForm />} />
              <Route exact path="view_form" element={<ViewFrom/>} />
             <Route exact path="teacher_profile" element={<TeacherProfile />} />
-            
+             <Route path="responses/:formId" element={<ViewResponses />} />
+              <Route path="edit/:id" element={<EditForm />} />
           </Route>
-             <Route path="/teacher/edit/:id" element={<EditForm />} />
-             <Route path="/teacher/responses/:formId" element={<ViewResponses />} />
+            
+            
 
           <Route exact path="/student_dashboard" element={<StudentDashboard />}>
             <Route exact path="student_form" element={<AvailableForms />} />

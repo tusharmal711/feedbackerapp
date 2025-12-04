@@ -169,7 +169,7 @@ const ViewForms = () => {
                   {/* Edit */}
                   <button
                     className="btn-icon"
-                    onClick={() => navigate(`/teacher/edit/${form._id}`)}
+                    onClick={() => navigate(`/teacher_dashboard/edit/${form._id}`)}
                   >
                     <FiEdit /> Edit
                   </button>
@@ -185,7 +185,7 @@ const ViewForms = () => {
                   {/* Responses */}
                   <button
                     className="btn-icon"
-                    onClick={() => navigate(`/teacher/responses/${form._id}`)}
+                    onClick={() => navigate(`/teacher_dashboard/responses/${form._id}`)}
                   >
                     <FiBarChart2 /> Responses
                   </button>
