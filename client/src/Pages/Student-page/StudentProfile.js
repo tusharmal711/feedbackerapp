@@ -33,10 +33,10 @@ const StudentProfile = () => {
       }
     };
     fetchData();
-     const interval = setInterval(fetchData, 1000);
+    //  const interval = setInterval(fetchData, 1000);
 
   // Cleanup interval on unmount
-         return () => clearInterval(interval);
+        //  return () => clearInterval(interval);
   }, [emailId]);
 
   const handleChange = (e) => {
