@@ -118,9 +118,9 @@ useEffect(() => {
         headers: { "Content-Type": "application/json" },
       });
 
-      localStorage.removeItem("teacherToken");
-      sessionStorage.removeItem("teacherToken");
-      Cookies.remove("teacherEmail");
+      localStorage.removeItem("studentToken");
+      sessionStorage.removeItem("studentToken");
+      Cookies.remove("studentEmail");
       localStorage.removeItem("emailId");
       sessionStorage.removeItem("emailId");
       navigate("/");

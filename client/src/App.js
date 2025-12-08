@@ -64,7 +64,7 @@ function App() {
           <Route exact path="/student_dashboard" element={<StudentDashboard />}>
             <Route exact path="student_form" element={<AvailableForms />} />
             <Route exact path="student_profile" element={<StudentProfile />} />
-            <Route exact path="teacher_profile" element={<TeacherProfile />} />
+           
           </Route>
             
             <Route path="/student/fill_form/:formId" element={<FillFeedbackForm />} />

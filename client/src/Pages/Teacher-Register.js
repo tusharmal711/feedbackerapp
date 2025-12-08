@@ -77,6 +77,7 @@ export default function TeacherReg() {
             <label htmlFor="teacherName">Name</label>
             <input
               type="text"
+              id="teacherName"
               name="teacherName"
               value={teacher.teacherName}
               onChange={handleChange}
@@ -91,6 +92,7 @@ export default function TeacherReg() {
             <input
               type="email"
               name="emailId"
+              id="emailId"
               value={teacher.emailId}
               onChange={handleChange}
               className="student-email"
@@ -101,7 +103,7 @@ export default function TeacherReg() {
           {/* College */}
           <div className="text-field roll">
             <label htmlFor="college">College name</label>
-            <select name="college" value={teacher.college} onChange={handleChange} required>
+            <select name="college" id="college" value={teacher.college} onChange={handleChange} required>
               <option value="">Select college</option>
               <option value="Techno Main Salt Lake">Techno Main Salt Lake</option>
               <option value="Techno India University">Techno India University</option>
@@ -112,7 +114,7 @@ export default function TeacherReg() {
           {/* Department */}
           <div className="text-field">
             <label htmlFor="deptName">Department</label>
-            <select name="deptName" value={teacher.deptName} onChange={handleChange} required>
+            <select name="deptName" id="deptName" value={teacher.deptName} onChange={handleChange} required>
               <option value="">Select department</option>
               <option value="MCA">MCA</option>
               <option value="BCA">BCA</option>
@@ -131,6 +133,7 @@ export default function TeacherReg() {
             <input
               type="password"
               name="password"
+              id="password"
               value={teacher.password}
               onChange={handleChange}
               className="student-password"

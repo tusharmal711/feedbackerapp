@@ -133,10 +133,10 @@ const TeacherDashboard = () => {
       sessionStorage.removeItem("emailId");
       navigate("/");
 
-      window.history.pushState(null, "", window.location.href);
-      window.onpopstate = function () {
-        window.history.go(1);
-      };
+      // window.history.pushState(null, "", window.location.href);
+      // window.onpopstate = function () {
+      //   window.history.go(1);
+      // };
     } catch (err) {
       console.error("Logout error:", err);
     }

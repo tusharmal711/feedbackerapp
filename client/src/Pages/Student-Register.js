@@ -73,6 +73,7 @@ const StuReg = () => {
             <input
               type="text"
               name="studName"
+              id="studName"
               value={student.studName}
               onChange={handleChange}
               className="student-name"
@@ -86,6 +87,7 @@ const StuReg = () => {
             <input
               type="email"
               name="emailId"
+              id="emailId"
               value={student.emailId}
               onChange={handleChange}
               className="student-email"
@@ -98,6 +100,7 @@ const StuReg = () => {
             <label htmlFor="college">College name</label>
             <select
               name="college"
+              id="college"
               value={student.college}
               onChange={handleChange}
               required
@@ -114,6 +117,7 @@ const StuReg = () => {
             <label htmlFor="deptName">Department</label>
             <select
               name="deptName"
+              id="deptName"
               value={student.deptName}
               onChange={handleChange}
               required
@@ -136,6 +140,7 @@ const StuReg = () => {
             <input
               type="text"
               name="uniRoll"
+              id="uniRoll"
               value={student.uniRoll}
               onChange={handleChange}
               className="student-roll"
@@ -148,6 +153,7 @@ const StuReg = () => {
             <label htmlFor="section">Section</label>
             <select
               name="section"
+              id="section"
               value={student.section}
               onChange={handleChange}
               required
@@ -167,6 +173,7 @@ const StuReg = () => {
             <label htmlFor="semester">Semester</label>
             <select
               name="semester"
+              id="semester"
               value={student.semester}
               onChange={handleChange}
               required
@@ -189,6 +196,7 @@ const StuReg = () => {
             <input
               type="password"
               name="password"
+              id="password"
               value={student.password}
               onChange={handleChange}
               className="student-password"

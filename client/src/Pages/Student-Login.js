@@ -45,15 +45,18 @@ const [isLoggingIn, setIsLoggingIn] = useState(false);
                expires: 7, // 1 day
                secure: true, // only sent over HTTPS
                sameSite: "Strict",
+               
              });
 
+              
 
 
 
-
-      setTimeout(() => {
+      
+         setTimeout(() => {
         navigate("/student_dashboard");
       }, 1500);
+     
     } else {
       toast.error(data.error || data.message || "Invalid credentials", {
         position: "top-right",
@@ -84,6 +87,7 @@ const [isLoggingIn, setIsLoggingIn] = useState(false);
             <input
               type="email"
               name="emailId"
+              id="emailId"
               value={formData.emailId}
               onChange={handleChange}
               required
@@ -93,11 +97,12 @@ const [isLoggingIn, setIsLoggingIn] = useState(false);
           {/* Password */}
           <div className="text-field">
             <div>
-              <label htmlFor="password">Password</label>
+              <label for="password">Password</label>
             </div>
             <input
               type="password"
               name="password"
+              id="password"
               value={formData.password}
               onChange={handleChange}
               required

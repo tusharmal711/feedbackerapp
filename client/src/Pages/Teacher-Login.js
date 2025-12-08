@@ -82,6 +82,7 @@ const handleSubmit = async (e) => {
             <input
               type="email"
               name="emailId"
+              id="emailId"
               value={formData.emailId}
               onChange={handleChange}
               required
@@ -96,6 +97,7 @@ const handleSubmit = async (e) => {
             <input
               type="password"
               name="password"
+              id="password"
               value={formData.password}
               onChange={handleChange}
               required

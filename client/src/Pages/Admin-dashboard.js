@@ -30,10 +30,10 @@ const AdminDashboard = () => {
         sessionStorage.removeItem("adminToken");
         navigate("/");
 
-        window.history.pushState(null, "", window.location.href);
-        window.onpopstate = function () {
-          window.history.go(1);
-        };
+        // window.history.pushState(null, "", window.location.href);
+        // window.onpopstate = function () {
+        //   window.history.go(1);
+        // };
       } else {
         console.error("Logout failed:", data.message);
       }
